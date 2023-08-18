@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food Delivery</title>
+
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+     :root {
+        --navbar-height: 59px;
+    }
+    
+    #navbar {
+        display: flex;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #logo img {
+        height: 100px;
+        margin: 40px 40px;
+    }
+    
+    #navbar {
+        position: relative;
+        top: 10%;
+    }
+    
+    #navbar ul {
+        display: flex;
+    }
+    
+    #navbar::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 30px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+    }
+    
+    #navbar ul li {
+        list-style: none;
+        font-size: 1.5rem;
+    }
+    
+    #navbar ul li a {
+        display: block;
+        padding: 3px 22px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: white;
+        font-weight: bolder;
+    }
+    
+    #navbar ul li a:hover {
+        color: rgb(241, 10, 10);
+        background-color: white;
+    }
+    
+    #home {
+        display: flex;
+        flex-direction: column;
+        height: 615px;
+        padding: 3px 200px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    
+    #home::before {
+        content: "";
+        background: url('https://thumbs.dreamstime.com/b/comfortable-food-day-restaurant-dish-delivery-top-view-free-space-your-text-164636603.jpg?w=768')no-repeat center center/cover;
+        position: absolute;
+        top: 0px;
+        left: 30px;
+        height: 768px;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.89;
+        margin: auto;
+    }
+    
+    #services {
+        margin: 0px;
+        display: flex;
+    }
+    
+    #services .box {
+        border: 2px solid black;
+        padding: 34px;
+        margin: 3px 6px;
+        border-radius: 28px;
+        background: url('https://as2.ftcdn.net/v2/jpg/01/25/45/37/1000_F_125453700_b5Gg9xMWbNB5uJAY6SubwXzYMSaqHrhj.jpg')no-repeat center center/cover;
+    }
+    
+    #services .box img {
+        border: 3px solid yellow;
+        border-radius: 10px;
+        height: 215px;
+        display: block;
+        margin: 3px 6px;
+    }
+    
+    #services .box p {
+        font-size: 17px;
+        font-family: sans-serif;
+        color: white;
+        font-weight: bold;
+    }
+    
+    #client-section {
+        height: 344px;
+    }
+    
+    #client-section::before {
+        content: "";
+        position: absolute;
+        background: url('https://www.highlightpr.co.uk/wp-content/uploads/2018/01/iStock-friends-and-family-enjoying-dinner-small.jpg')no-repeat center center/cover;
+        width: 100%;
+        height: 54%;
+        z-index: -1;
+        opacity: 0.6;
+    }
+    
+    #clients {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #clients img {
+        height: 124px;
+    }
+    
+    #client-item {
+        padding: 44px;
+    }
+    
+    #contact {
+        position: relative;
+    }
+    
+    #contact-box form {
+        width: 40%;
+    }
+    
+    #contact-box label {
+        font-size: 1.4rem;
+        font-weight: bold;
+        font-family: cursive
+    }
+    
+    #contact-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 34px;
+    }
+    
+    #contact-box input,
+    #contact-box textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid black;
+    }
+    
+    #contact::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6UMXOprQQBQ2EYT9ukd32UfhhDFddd8ydIA&usqp=CAU')no-repeat center center/cover;
+    }
+    
+    footer {
+        background-color: black;
+        color: white;
+        padding: 9px 20px;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    .h-primary {
+        font-size: 3.8rem;
+        padding: 14px;
+    }
+    
+    .h-secondary {
+        font-size: 3rem;
+        padding: 14px;
+        color: white;
+    }
+    
+    #home h1 {
+        color: red;
+        text-align: center;
+        text-shadow: white 2px;
+    }
+    
+    #home p {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        color: white;
+        font-weight: bolder;
+        padding: 12px;
+    }
+    
+    .btn {
+        padding: 6px 20px;
+        border: 5px solid red;
+        background-color: white;
+        color: black;
+        margin: 20px;
+        font-size: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://png.pngtree.com/template/20191014/ourmid/pngtree-pin-food-delivery-map-location-delivery-logo-concept-image_318151.jpg">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services-container">Delicacies</a></li>
+            <li class="item"><a href="#client-section"> Our Clients</a></li>
+            <li class="item"><a href="#contact">Contact Us</a></li>
+
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary center">Speedy food, good food.</h1>
+        <p>Just order and we’ll be at your door.No excuses, on time delivery.</p>
+        <p>Hungry or thirsty? Call us right now.</p>
+        <button class="btn">ORDER NOW</button>
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary center">
+            Take a bite out of hunger:)
+        </h1>
+        <div id="services">
+            <div class="box">
+                <img src="https://img.freepik.com/free-photo/plate-food-with-different-dishes-including-chicken-rice-other-food_1340-24267.jpg">
+                <h2 class="h-secondary center"> Indian Cuisine</h2>
+                <p class="center">A slice of India on your plate.Explore our north and south Indian Cuisine.It is often said that if you don't love south Indian Cuisine you are either an alien or your taste buds are spoiled."FROM SOUTH TO YOUR MOUTH":)"</p>
+            </div>
+            <div class="box">
+                <img src="https://media.istockphoto.com/photos/homemade-italian-bruschetta-appetizer-picture-id481765835?k=20&m=481765835&s=612x612&w=0&h=qb_jIq_sPzTsZpCCZJ4fCYrN1ryka1A1umWb83lKWJw=">
+                <h2 class="h-secondary center">Appetizers</h2>
+                <p class="center">Now that your tastes have grown up!!Try our delicious Appetizers which enhances your hunger and make you eat MORE N MORE. These are like little bites of heaven.Little place,BIG TASTE. Snack happily everafter!!!</p>
+            </div>
+            <div class="box">
+                <img src="https://st.depositphotos.com/1900347/4146/i/950/depositphotos_41466555-stock-photo-image-of-slice-of-pizza.jpg">
+                <h2 class="h-secondary center">Fresh Pizzas</h2>
+                <p class="center">What's better than having a cheesy pizza?Especially a pizza that gives you freedom to choose your own toppings such as black olives, fresh tomato, jalapeno and non-veg toppings too. The icing on the cake is that you can choose crust of
+                    your choice - hand tossed crust, thin crust,cheese burst crust and many more. So come and explore our mouth-watering pizzas:)</p>
+            </div>
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_bpIGqaqR2OI2bjpVwANRa3xeQdVoOVIjvg&usqp=CAU" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPB76rCtV1-hqvmjJeXri-Dt_Wmi2KZYOzDw&usqp=CAU" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0FyXkibQT9csrIv8yAQqUmb39IZg4dfzKQ&usqp=CAU" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjysFI_FjcLHLMRcm-kd1IA9X-0vBP0R17Fw&usqp=CAU" alt="Our Client">
+            </div>
+
+
+
+        </div>
+    </section>
+    <section id="contact">
+        <h1 class="h-primary center">
+            To order the food:)
+        </h1>
+        <h1 class="h-primary center">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Your name">
+                </div>
+                <div class="form-group">
+                    <label for="name">E-mail:</label>
+                    <input type="email" name="name" id="name" placeholder="Enter Your email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Contact Number:</label>
+                    <input type="phone" name="name" id="email" placeholder="Enter Your Contact Number">
+                </div>
+                <div class="form-group">
+                    <label for="name">Delivery Address:</label>
+                    <input type="address" name="name" id="address" placeholder="Enter Delivery Address">
+                </div>
+                <div class="form-group">
+                    <label for="name">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; fastfoodDelivery.com. All rights reserved!
+        </div>
+    </footer>
+</body>
+
+</html>
