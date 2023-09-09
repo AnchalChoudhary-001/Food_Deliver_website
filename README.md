@@ -6,4 +6,4 @@ enhancing the overall user experience.Tech stack : HTML,CSS._
 # Live link of the project : https://anchalchoudhary-001.github.io/Food_Deliver_website/
 # Demo of the Project
 
-![logo](https://github.com/AnchalChoudhary-001/My_portfolio/blob/main/Capture3.png)
+![logo](https://github.com/AnchalChoudhary-001/Food_Deliver_website/blob/main/demo.gif)
